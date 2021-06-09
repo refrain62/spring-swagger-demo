@@ -10,23 +10,23 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
-@EnableSwagger2 // swagger2.0‚ğg—p
+//@EnableSwagger2 // swagger2.0ã‚’ä½¿ç”¨
 public class SwaggerDemoConfiguration {
 
     @Bean
     public Docket petApi() {
-        return new Docket(DocumentationType.SWAGGER_2) // Swagger2.0‚ğg—p‚µ‚Ü‚·éŒ¾
+        return new Docket(DocumentationType.OAS_30) // OAS3.0ã‚’ä½¿ç”¨ã—ã¾ã™å®£è¨€
                 .select()
                 .paths(PathSelectors.ant("/apis/**"))
                 .build()
                 .useDefaultResponseMessages(false)
                 .apiInfo(new ApiInfoBuilder()
                         .title("Customise Title Swagger Demo Application")
-                        .description("©•ªD‚İ‚ÉƒJƒXƒ^ƒ}ƒCƒY‚µ‚Ä‚½‚æ")
+                        .description("è‡ªåˆ†å¥½ã¿ã«ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã—ã¦ãŸã‚ˆ")
                         .contact(new Contact("customise-name", "http://customise-contact", "customise-email"))
                         .version("1.0")
                         .termsOfServiceUrl("http://customise.com")
-                        .license("Customise License").licenseUrl("http://customise-license-url") // license‚Ì‚İ‚¾‚ÆƒeƒLƒXƒgAlicenseUrlİ’è‚·‚é‚ÆƒŠƒ“ƒN‚É‚È‚é
+                        .license("Customise License").licenseUrl("http://customise-license-url") // licenseã®ã¿ã ã¨ãƒ†ã‚­ã‚¹ãƒˆã€licenseUrlè¨­å®šã™ã‚‹ã¨ãƒªãƒ³ã‚¯ã«ãªã‚‹
                         .build());
     }
 }

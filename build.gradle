@@ -18,12 +18,19 @@ dependencies {
 	
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	
-	// Swagger�ŕK�v�ȍŒ��
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2/2.9.2
-	implementation "io.springfox:springfox-swagger2:2.9.2"
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui/2.9.2
-	implementation "io.springfox:springfox-swagger-ui:2.9.2"
+//	// Swaggerで必要な最低限
+//	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2/2.9.2
+//	implementation "io.springfox:springfox-swagger2:2.9.2"
+//	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui/2.9.2
+//	implementation "io.springfox:springfox-swagger-ui:2.9.2"
+
+	// https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 }
 
 test {

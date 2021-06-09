@@ -20,7 +20,7 @@ public class LessonController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<LessonResponse> list() {
-        // æ“¾ˆ—
+        // å–å¾—å‡¦ç†
         return Arrays.asList(
                 new LessonResponse(1, "studentName1", "tutorName1"),
                 new LessonResponse(2, "studentName2", "tutorName2"),
@@ -34,7 +34,7 @@ public class LessonController {
     @GetMapping("{lessonIdentifier}")
     @ResponseStatus(HttpStatus.OK)
     public LessonResponse detail(@PathVariable("lessonIdentifier") LessonIdentifier lessonIdentifier) {
-        // æ“¾ˆ—
+        // å–å¾—å‡¦ç†
         return new LessonResponse(1, "studentName1", "tutorName1");
     }
 
@@ -45,18 +45,18 @@ public class LessonController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public LessonIdentifierResponse add(@RequestBody LessonRequest lessonRequest) {
-        // ’Ç‰Áˆ—
+        // è¿½åŠ å‡¦ç†
         return new LessonIdentifierResponse(new LessonIdentifier(4));
     }
 
-    @ApiOperation(value = "${LessonController.delelte.value}", notes = "${LessonController.delete.notes}")
+    @ApiOperation(value = "${LessonController.delete.value}", notes = "${LessonController.delete.notes}")
     @ApiResponses(value = {
             @ApiResponse(code = 400, message = "Bad Request", response = ErrorResponse.class),
             @ApiResponse(code = 404, message = "Not Found", response = ErrorResponse.class)})
     @DeleteMapping("{lessonIdentifier}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("lessonIdentifier") LessonIdentifier lessonIdentifier) {
-        // íœˆ—
+        // å‰Šé™¤å‡¦ç†
     }
 
     @ApiOperation(value = "${LessonController.edit.value}", notes = "${LessonController.edit.notes}")
@@ -67,7 +67,7 @@ public class LessonController {
     @ResponseStatus(HttpStatus.OK)
     public LessonResponse edit(@PathVariable("lessonIdentifier") LessonIdentifier lessonIdentifier,
                                @RequestBody LessonRequest lessonRequest) {
-        // •ÒWˆ—
+        // ç·¨é›†å‡¦ç†
         return new LessonResponse(1, "EditStudentName1", "EditTutorName1");
     }
 }
